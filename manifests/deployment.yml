@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sohelappdeployment 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sohelappdeployment
+  template:
+    metadata:
+      labels:
+        app: sohelappdeployment 
+    spec:
+      containers:
+        - name: sohelappdeployment 
+          image: appdeploment.azurecr.io/sohelappdeployment
+          ports:
+          - containerPort: 80
